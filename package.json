@@ -41,5 +41,8 @@
     "gruntplugin",
     "react",
     "jsx"
-  ]
+  ],
+  "dependencies": {
+    "react-tools": "~0.5.1"
+  }
 }

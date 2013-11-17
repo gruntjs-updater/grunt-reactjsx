@@ -10,39 +10,30 @@
 
 module.exports = function(grunt) {
 
-  // Please see the Grunt documentation for more information regarding task
-  // creation: http://gruntjs.com/creating-tasks
+  var transform = require('react-tools').transform;
 
   grunt.registerMultiTask('reactjsx', 'Compile Facebook React .jsx templates into .js', function() {
-    // Merge task-specific and/or target-specific options with these defaults.
-    var options = this.options({
-      punctuation: '.',
-      separator: ', '
-    });
-
-    // Iterate over all specified file groups.
     this.files.forEach(function(f) {
-      // Concat specified files.
       var src = f.src.filter(function(filepath) {
-        // Warn on and remove invalid source files (if nonull was set).
         if (!grunt.file.exists(filepath)) {
           grunt.log.warn('Source file "' + filepath + '" not found.');
           return false;
-        } else {
-          return true;
         }
+        return true;
       }).map(function(filepath) {
-        // Read file source.
         return grunt.file.read(filepath);
-      }).join(grunt.util.normalizelf(options.separator));
+      }).join(grunt.util.normalizelf(grunt.util.linefeed));
 
-      // Handle options.
-      src += options.punctuation;
+      try {
+        src = transform(src);
+      }
+      catch(e) {
+        grunt.log.error(e);
+        grunt.fail.warn('JSX failed to compile.');
+        return;
+      }
 
-      // Write the destination file.
       grunt.file.write(f.dest, src);
-
-      // Print a success message.
       grunt.log.writeln('File "' + f.dest + '" created.');
     });
   });
