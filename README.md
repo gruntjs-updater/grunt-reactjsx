@@ -1,4 +1,4 @@
-# grunt-reactjsx
+# grunt-reactjsx [![Build Status](https://travis-ci.org/steida/grunt-reactjsx.png?branch=master)](https://travis-ci.org/steida/grunt-reactjsx)
 
 > Compile Facebook [React](http://facebook.github.io/react) .jsx templates into .js
 
