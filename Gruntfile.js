@@ -48,13 +48,18 @@ module.exports = function(grunt) {
       tests: ['test/*_test.js'],
     },
 
+    release: {
+      options: {}
+    }
+
   });
 
   grunt.loadTasks('tasks');
 
-  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
+  grunt.loadNpmTasks('grunt-release');
 
   grunt.registerTask('test', ['clean', 'reactjsx', 'nodeunit']);
   grunt.registerTask('default', ['jshint', 'test']);
