@@ -1,4 +1,4 @@
-# grunt-reactjsx [![Build Status](https://travis-ci.org/steida/grunt-reactjsx.png?branch=master)](https://travis-ci.org/steida/grunt-reactjsx)
+# grunt-reactjsx [![Build Status](https://travis-ci.org/steida/grunt-reactjsx.png?branch=master)](https://travis-ci.org/steida/grunt-reactjsx) [![Dependency Status](https://david-dm.org/steida/grunt-reactjsx.png)](https://david-dm.org/steida/grunt-reactjsx) [![devDependency Status](https://david-dm.org/steida/grunt-reactjsx/dev-status.png)](https://david-dm.org/steida/grunt-reactjsx#info=devDependencies)
 
 > Compile Facebook [React](http://facebook.github.io/react) .jsx templates into .js
 
