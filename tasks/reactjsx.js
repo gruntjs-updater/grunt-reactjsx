@@ -29,7 +29,7 @@ module.exports = function(grunt) {
       }
       catch(e) {
         grunt.log.error(e);
-        grunt.fail.warn('JSX failed to compile.');
+        grunt.fail.warn(f.src.join() + ' failed to compile.');
         return;
       }
 
